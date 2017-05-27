@@ -27,7 +27,7 @@ export class ContactService {
 
   //Delete contact
   deleteContact(id: string) {
-    return this._http.delete('http://localhost:3000/contact'+id)
+    return this._http.delete('http://localhost:3000/api/contact/'+id)
       .map(res => res.json());
   }
 

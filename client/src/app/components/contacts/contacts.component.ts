@@ -18,7 +18,7 @@ export class ContactsComponent implements OnInit {
 
   constructor(private _contactService: ContactService) { }
 
-  deleteContact(id: string) {
+  deleteContact(id: any) {
     this._contactService.deleteContact(id).subscribe( data => {
       if (data.n == 1) {
         for(var i = 0; i<this.contacts.length; i++) {
