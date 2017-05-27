@@ -6,6 +6,21 @@ var path = require('path');
 
 var app = express();
 
+//connect to mongodb
+const db_url = 'mongodb://vishnu:12345@ds155841.mlab.com:55841/mean-contacts'
+mongoose.connect(db_url);
+
+//on connection
+mongoose.connection.on('connected', () => {
+    console.log('Connected to database');
+});
+
+mongoose.connection.on('error', (err) => {
+    if(err) {
+        console.log('error connecting to db: '+err);
+    }
+});
+
 //Routes
 const route = require('./routes/route');
 app.use('/api', route);
