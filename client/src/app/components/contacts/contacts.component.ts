@@ -18,6 +18,25 @@ export class ContactsComponent implements OnInit {
 
   constructor(private _contactService: ContactService) { }
 
+  addContact() {
+    const newContact = {
+      first_name: this.first_name,
+      last_name: this.last_name,
+      phone: this.phone
+    }
+
+    console.log('Adding contact');
+    console.log(newContact);
+
+    this._contactService.addContact(newContact).subscribe(contact => {
+      this.contacts.push(contact);
+    });
+
+    this._contactService.getContacts().subscribe( contacts => {
+      this.contacts = contacts;
+    });
+  }
+
   deleteContact(id: any) {
     this._contactService.deleteContact(id).subscribe( data => {
       if (data.n == 1) {
