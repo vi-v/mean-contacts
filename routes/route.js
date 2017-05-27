@@ -7,5 +7,13 @@ router.get('/contacts', (req, res, next) => {
 });
 
 //Add contacts
+router.post('/contact', (req, res, next) => {
+    
+});
+
+//Delete Contact
+router.delete('/contact/:id', (req, res, next) => {
+
+});
 
 module.exports = router;
