@@ -24,12 +24,20 @@ router.post('/contact', (req, res, next) => {
         } else {
             res.json({msg: 'Contact added successfully'});
         }
-    })
+    });
 });
 
 //Delete Contact
 router.delete('/contact/:id', (req, res, next) => {
-
+    Contact.remove({
+        _id: req.params.id
+    }, (err, result) => {
+        if(err) {
+            res.json(err);
+        } else {
+            res.json(result);
+        }
+    });
 });
 
 module.exports = router;
