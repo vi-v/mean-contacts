@@ -1,18 +1,22 @@
-<div class="well" *ngFor = "let contact of contacts">
-  <div class="col-md-3">
-    {{contact.first_name}}
-  </div>
+<div *ngIf="contacts" class="well">
+  <div class="" *ngFor = "let contact of contacts">
+    <div class="col-md-3">
+      {{contact.first_name}}
+    </div>
 
-  <div class="col-md-3">
-    {{contact.last_name}}
-  </div>
+    <div class="col-md-3">
+      {{contact.last_name}}
+    </div>
 
-  <div class="col-md-3">
-    {{contact.phone}}
-  </div>
+    <div class="col-md-3">
+      {{contact.phone}}
+    </div>
 
-  <div class="col-md-3">
-    <input type="button" (click)="deleteContact(contact._id)" value="Delete" class="btn btn-danger">
+    <div class="col-md-3">
+      <input type="button" (click)="deleteContact(contact._id)" value="Delete" class="btn btn-danger">
+    </div>
+    <br>
+    <hr>
   </div>
 </div>
 
