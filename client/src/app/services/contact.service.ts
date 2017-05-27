@@ -6,7 +6,9 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class ContactService {
 
-  constructor(private _http: Http) { }
+  constructor(private _http: Http) {
+    console.log('contacts service is ready ...');
+  }
 
   //retrieving contacts
   getContacts() {
