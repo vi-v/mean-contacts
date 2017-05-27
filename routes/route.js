@@ -12,6 +12,7 @@ router.get('/contacts', (req, res, next) => {
 
 //Add contacts
 router.post('/contact', (req, res, next) => {
+
     let newContact = new Contact({
         first_name: req.body.first_name,
         last_name: req.body.last_name,
@@ -20,6 +21,7 @@ router.post('/contact', (req, res, next) => {
 
     newContact.save((err, contact) => {
         if(err) {
+            console.log(err);
             res.json({msg: 'Failed to add contact'});
         } else {
             res.json({msg: 'Contact added successfully'});
